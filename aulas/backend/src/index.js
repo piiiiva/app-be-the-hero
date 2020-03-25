@@ -1,9 +1,10 @@
 const express = require('express')
+const cors = require('cors')
 const routes = require('./routes') // o ./ é para referenciar a mesma pasta do arquivo index.js
 
 const app = express()
 
-
+app.use(cors()) // como estou em desenvolvimento, só de fazer isso já vou permitir que todas as aplicaçoes front end possam acessar o nosso back-end
 app.use(express.json()) // to falando pro express ir lá no corpo da minha requisiçao e converter o json em um objeto entendível pelo javaScript
 app.use(routes) // tem que ser abaixo do app.use(express.json())
 
